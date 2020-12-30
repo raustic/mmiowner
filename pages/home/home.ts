@@ -14,11 +14,13 @@ export class HomePage {
   initForm() {
     this.form = this.fb.group({
       fname: [],
-      lname: []
+      lname: [],
+      phone: []
     });
   }
   submitForm() {
     alert(JSON.stringify(this.form.getRawValue()));
+    this.form.reset();
     //  alert(this.form.getRawValue());
   }
 }

@@ -10,20 +10,14 @@
   </h2>
   <form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="on">
     <div class="d-flex flex-row">
-      <div class="pl-4">First Name</div>
       <div class="pl-5">
-        <ion-input
-          formControlName="fname"
-          placeholder="First Name"
-          clearInput
-          color="primary"
-        ></ion-input>
-        <!-- <input
-          formControlName="fname"
-          placeholder="First Name"
-          class="form-control"
-          [autocomplete]="off"
-        /> -->
+        <ion-item>
+          <ion-label color="primary" mode="md">Inline Label</ion-label>
+          <ion-input
+            formControlName="fname"
+            placeholder="Text Input"
+          ></ion-input>
+        </ion-item>
       </div>
     </div>
 

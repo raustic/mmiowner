@@ -8,17 +8,21 @@
   <h2 class="border m-2 border-primary p-4 rounded">
     Welcome to My First Project in Ionic
   </h2>
-  <form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+  <form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="on">
     <div class="d-flex flex-row">
       <div class="pl-4">First Name</div>
       <div class="pl-5">
-        <input
+        <ion-input
+          formControlName="fname"
+          placeholder="First Name"
+          clearInput
+        ></ion-input>
+        <!-- <input
           formControlName="fname"
           placeholder="First Name"
           class="form-control"
-          autocomplete="off"
-          autofocus="autofocus"
-        />
+          [autocomplete]="off"
+        /> -->
       </div>
     </div>
 
@@ -29,7 +33,7 @@
           formControlName="lname"
           placeholder="Last Name"
           class="form-control"
-          autocomplete="lname"
+          [autocomplete]="off"
         />
       </div>
     </div>

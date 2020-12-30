@@ -1,14 +1,24 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
+import { NavController } from "ionic-angular";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html"
 })
 export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
+  form: FormGroup;
+  constructor(public navCtrl: NavController, private fb: FormBuilder) {
+    this.initForm();
   }
-
+  initForm() {
+    this.form = this.fb.group({
+      fname: [],
+      lname: []
+    });
+  }
+  submitForm() {
+    alert(JSON.stringify(this.form.getRawValue()));
+    //  alert(this.form.getRawValue());
+  }
 }

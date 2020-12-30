@@ -4,14 +4,40 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <h2 class="border m-2 border-primary p-4 rounded">
+    Welcome to My First Project in Ionic
+  </h2>
+  <form (ngSubmit)="submitForm()" [formGroup]="form" autocomplete="off">
+    <div class="d-flex flex-row">
+      <div class="pl-4">First Name</div>
+      <div class="pl-5">
+        <input
+          formControlName="fname"
+          placeholder="First Name"
+          class="form-control"
+          autocomplete="off"
+          autofocus="autofocus"
+        />
+      </div>
+    </div>
+
+    <div class="d-flex flex-row mt-3">
+      <div class="pl-4">Last Name</div>
+      <div class="pl-5">
+        <input
+          formControlName="lname"
+          placeholder="Last Name"
+          class="form-control"
+          autocomplete="lname"
+        />
+      </div>
+    </div>
+    <div>
+      <button ion-button type="submit">Save</button>
+      <button ion-button type="reset" style="background-color:red;">
+        Clear
+      </button>
+    </div>
+  </form>
 </ion-content>
